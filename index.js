@@ -7,10 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const option = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-};
 app.use(compression({
     level: 5,
     threshold: 0,
@@ -107,6 +103,6 @@ app.get('/', function (req, res) {
    res.send('Hello Memek');
 });
 
-https.createServer(option, app).listen(50000, function () {
+https.createServer(app).listen(50000, function () {
     console.log('HTTPS Listening on port 50000');
 });
