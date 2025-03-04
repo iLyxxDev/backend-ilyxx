@@ -103,6 +103,6 @@ app.get('/', function (req, res) {
    res.send('Hello Memek');
 });
 
-https.createServer(app).listen(50000, function () {
-    console.log('HTTPS Listening on port 50000');
+app.listen(5000, function () {
+    console.log('Listening on port 5000');
 });
